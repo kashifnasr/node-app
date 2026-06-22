@@ -1,5 +1,6 @@
 import User from "../models/userModel.js";
-
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 // controler functions for all pages.
 export const homepage=(req,res)=>{
@@ -11,7 +12,7 @@ export const aboutpage=(req,res)=>{
 }
 
 export const mylogin=(req,res)=>{
-    res.reder("login");
+    res.render("login");
 }
 
 

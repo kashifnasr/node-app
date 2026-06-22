@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const conndb=()=>{mongoose.connect("mongodb://localhost:27017/studentDB" )
+const conndb=()=>{mongoose.connect("mongodb+srv://hellokashif_db_user:42EHJJWHoySlH8df@cluster0.ieb8ehe.mongodb.net/" )
 .then(() => {
         console.log("Database connected successfully again");
     })
