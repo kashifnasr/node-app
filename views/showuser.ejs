@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+   <%-include("./partials/Header") %>
+    <h1>
+        Data Recieved
+    </h1>
+    <form action="/search-user" method="GET">
+    <input type="text" name="name" placeholder="Enter user name">
+    <button type="submit">Search</button>
+    </form>
+    <table border="2px" cellpadding="3px">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Registration Date</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+
+        <% users.forEach((user, index) => { %>
+            <tr>
+                <td><%= index %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%=user.createAt %></td>
+                <td><form action="/delete-user/<%=user._id %>" method="post" onsubmit="return confirm('Are you sure to delete');"><button type="submit">Delete</button></form></td>
+                <td><form action="/update-user/<%=user._id %>" method="post" onsubmit="return confirm('Are you sure to update');"><button type="submit">Edit</button></form></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
