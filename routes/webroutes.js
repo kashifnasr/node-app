@@ -15,7 +15,7 @@ router.get("/login",mylogin);
 router.get("/profile", authMiddleware, profilePage);
 
 
-// router.post("/registration",submitdata);
+router.post("/registration",submitdata);
 
 
 router.get("/temp",showtemp)

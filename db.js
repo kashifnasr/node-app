@@ -1,6 +1,6 @@
 
 // DATABASE CONNECTION
-mongoose.connect("mongodb+srv://hellokashif_db_user:42EHJJWHoySlH8df@cluster0.ieb8ehe.mongodb.net/")
+mongoose.connect("mongodb://127.0.0.1:27017/studentDB")
     .then(() => {
         console.log("Database connected successfully");
     })
